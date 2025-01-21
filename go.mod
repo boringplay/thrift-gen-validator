@@ -1,4 +1,4 @@
-module github.com/cloudwego/thrift-gen-validator
+module github.com/boringplay/thrift-gen-validator
 
 go 1.13
 

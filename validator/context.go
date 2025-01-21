@@ -17,7 +17,7 @@ package validator
 import (
 	"fmt"
 
-	"github.com/cloudwego/thrift-gen-validator/parser"
+	"github.com/boringplay/thrift-gen-validator/parser"
 	"github.com/cloudwego/thriftgo/generator/golang"
 	tp "github.com/cloudwego/thriftgo/parser"
 )

@@ -18,7 +18,7 @@ import (
 	"flag"
 	"os"
 
-	"github.com/cloudwego/thrift-gen-validator/validator"
+	"github.com/boringplay/thrift-gen-validator/validator"
 )
 
 func main() {

@@ -45,7 +45,7 @@ func (p *Example) IsValid() error {
 
 ## Install
 
-`go install github.com/cloudwego/thrift-gen-validator@latest`
+`go install github.com/boringplay/thrift-gen-validator@latest`
 
 ## Usage
 
@@ -163,15 +163,15 @@ struct Example {
 
 #### Customized Validation Function
 
-Now you can use parameter `func` to customize your validation function. Like below:  
-`thriftgo -g go -p validator:func=my_func=path_to_template.txt my.thrift`  
+Now you can use parameter `func` to customize your validation function. Like below:
+`thriftgo -g go -p validator:func=my_func=path_to_template.txt my.thrift`
 `my_func` is the function name, `path_to_template.txt` is the path to template file which should be a go template.
 Available template variables:
-| variable name | meaning                               | type                                                             |
+| variable name | meaning | type |
 | ------------- | ------------------------------------- | ---------------------------------------------------------------- |
-| Source        | variable name that rule will refer to | string                                                           |
-| StructLike    | ast of current struct/union/exception | *"github.com/cloudwego/thriftgo/generator/golang".StructLike     |
-| Function      | data of current function              | *"github.com/cloudwego/thrift-gen-validator/parser".ToolFunction |
+| Source | variable name that rule will refer to | string |
+| StructLike | ast of current struct/union/exception | _"github.com/cloudwego/thriftgo/generator/golang".StructLike |
+| Function | data of current function | _"github.com/boringplay/thrift-gen-validator/parser".ToolFunction |
 
 ## Example
 
@@ -240,6 +240,7 @@ func main() {
 ```
 
 ### Customize Validation Function Example
+
 If we have a `my.thrift` like below:
 
 ```Thrift
@@ -254,7 +255,7 @@ And assumes that we want to limit the max length of `Message` to 10, we can writ
 {{- .Source}} := 10 /*my length*/
 ```
 
-Then we can use command below to generate a validator file:  
+Then we can use command below to generate a validator file:
 `thriftgo -g go -p validator:func=my_length=my_length.txt my.thrift`
 
 We will get a `IsValid() error` like below:
@@ -288,7 +289,7 @@ And assumes that we want to limit the max length of `Message` to the sum of MaxL
 {{- .Source}} := {{$reference}} + 10 /*length fix*/
 ```
 
-Then we can use command below to generate a validator file:  
+Then we can use command below to generate a validator file:
 `thriftgo -g go -p validator:func=fix_length=fix_length.txt my.thrift`
 
 We will get a `IsValid() error` like below:

@@ -23,8 +23,8 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/cloudwego/thrift-gen-validator/config"
-	"github.com/cloudwego/thrift-gen-validator/parser"
+	"github.com/boringplay/thrift-gen-validator/config"
+	"github.com/boringplay/thrift-gen-validator/parser"
 	"github.com/cloudwego/thriftgo/generator/backend"
 	"github.com/cloudwego/thriftgo/generator/golang"
 	tp "github.com/cloudwego/thriftgo/parser"
